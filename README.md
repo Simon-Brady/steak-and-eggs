@@ -6,6 +6,10 @@ Test repo to handle:
 - Tagging UI and poc
 - Filters
 
+## Featuring:
+
+- https://github.com/pmndrs/zustand
+
 ## Building and running on localhost
 
 First install dependencies:
@@ -31,10 +35,6 @@ To create a development build:
 ```sh
 npm run build-dev
 ```
-
-## Running
-
-Open the file `dist/index.html` in your browser
 
 ## Testing
 
