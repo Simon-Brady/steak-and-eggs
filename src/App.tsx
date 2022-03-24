@@ -1,23 +1,26 @@
 
-import * as React from 'react';
+import React from "react";
 import { hot } from "react-hot-loader/root";
+import { Dropdown } from "./components/Dropdown";
+import { useStore } from "./store";
 
-interface Props {
-   name:
-    string
-}
+type DOMTargetT = {value: string}
+type ChangeSymbolT = { target: DOMTargetT}
 
-class App extends React.Component<Props> {
-  render() {
-    const { name } = this.props;
-    return (
-      <>
-        <h1>
-          Hello {name}
-        </h1>
-      </>
-    );
+export const App = () => {
+  const { symbols, setSelectedSymbol, selectedSymbol } = useStore()
+
+
+  const onSymbolChange = (e: ChangeSymbolT) => {
+    const { target } = e;
+		const { value } = target;
+    setSelectedSymbol(value)
   }
+return <>
+<h1>Zustand</h1>
+{selectedSymbol}
+  <Dropdown symbols={symbols} onSymbolChange={onSymbolChange}/>
+</>
 }
 
 export default hot(App);
