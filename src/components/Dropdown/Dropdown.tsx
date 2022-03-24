@@ -12,7 +12,7 @@ const Dropdown = ({onSymbolChange, symbols} : ISymbols) => {
 
     console.log(symbols)
     return (
-    <select name='symbol' onChange={onSymbolChange}>
+    <select className='select' name='symbol' onChange={onSymbolChange}>
             {symbols.map((symbol) => {
                 let symbolValue = symbol.symbol
                 return (<option value={symbolValue}>{symbolValue}</option>)})}

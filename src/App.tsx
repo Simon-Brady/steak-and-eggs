@@ -1,26 +1,26 @@
 
 import React from "react";
 import { hot } from "react-hot-loader/root";
-import { Dropdown } from "./components/Dropdown";
-import { useStore } from "./store";
+import {SelectedSymbol} from './components/SelectedSymbol'
+import { SelectSymbol } from "./components/SelectSymbol";
+import styled from '@emotion/styled';
+import { AvailableSymbols } from "./components/AvailableSymbols";
 
-type DOMTargetT = {value: string}
-type ChangeSymbolT = { target: DOMTargetT}
-
+const StyledWrapper = styled.div`
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`
 export const App = () => {
-  const { symbols, setSelectedSymbol, selectedSymbol } = useStore()
-
-
-  const onSymbolChange = (e: ChangeSymbolT) => {
-    const { target } = e;
-		const { value } = target;
-    setSelectedSymbol(value)
-  }
-return <>
+  console.log('look at me go!')
+return <StyledWrapper>
 <h1>Zustand</h1>
-{selectedSymbol}
-  <Dropdown symbols={symbols} onSymbolChange={onSymbolChange}/>
-</>
+  <SelectedSymbol/>
+  <SelectSymbol/>
+  <AvailableSymbols/>
+</StyledWrapper>
 }
 
 export default hot(App);

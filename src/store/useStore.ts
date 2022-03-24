@@ -1,12 +1,12 @@
 import create from 'zustand';
 import symbols_staging from '../fixtures/symbols_staging.json';
 
-interface ISymbols {
+type TSymbol = {
     symbol: string
 }
 
 interface IState {
-    symbols: ISymbols[],
+    symbols: TSymbol[],
     selectedSymbol: null | string,
     setSelectedSymbol: (value: string) => void
 }
