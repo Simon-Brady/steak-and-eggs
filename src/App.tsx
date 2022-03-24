@@ -7,16 +7,19 @@ import styled from '@emotion/styled';
 import { AvailableSymbols } from "./components/AvailableSymbols";
 
 const StyledWrapper = styled.div`
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Antonio', sans-serif;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  h1{
+    align-self: flex-end;
+  }
 `
 export const App = () => {
   console.log('look at me go!')
 return <StyledWrapper>
-<h1>Zustand</h1>
+<h1>ZUSTAND</h1>
   <SelectedSymbol/>
   <SelectSymbol/>
   <AvailableSymbols/>
